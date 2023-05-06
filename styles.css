@@ -1,0 +1,195 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.icon::before {
+    display: inline-block;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    background-color: rgb(19, 17, 17);
+    font-family: 'Mukta', Arial sans-serif;
+    color: white;
+}
+
+#schedule {
+    margin: 50px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.day {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.day h2 {
+    text-decoration: underline;
+    background: linear-gradient(to right, rgb(59, 57, 94), rgb(31, 11, 148));
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+    padding: 1rem;
+    font-weight: 600;
+    font-size: 2rem;
+}
+
+.day .categories {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.categories .category>h3 {
+    font-weight: 500;
+    font-size: 1.5rem;
+}
+
+.categories .category>h3:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+.categories .items {
+    font-weight: 300;
+    margin-left: 1.2rem;
+    list-style-type: none;
+    font-size: 1.2rem;
+}
+
+.items li {
+    padding: 0 5px;
+    position: relative;
+}
+
+.items li input {
+    background: none;
+    border: rgb(187, 177, 177) solid 2px;
+    border-radius: 5px;
+    color: rgb(177, 173, 173);
+    font-family: inherit;
+    font-weight: inherit;
+    font-size: inherit;
+    padding-left: 5px;
+}
+
+.deletable:hover::before {
+    font: var(--fa-font-solid);
+    content: "\f057";
+    color: rgb(238, 71, 71);
+    padding-right: 5px;
+    font-size: 1.15rem;
+    text-decoration: none;
+    position: absolute;
+    translate: -1.7rem 0.45rem;
+}
+
+.hoverable:hover {
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.03);
+    border-radius: 5px;
+    transform: scale(1.015);
+}
+
+@keyframes spinGradient {
+    0% {
+        background: linear-gradient(-45deg, rgb(31, 11, 148), rgb(59, 57, 94));
+    }
+
+    12.5% {
+        background: linear-gradient(0deg, rgb(31, 11, 148), rgb(59, 57, 94));
+    }
+
+    25% {
+        background: linear-gradient(45deg, rgb(31, 11, 148), rgb(59, 57, 94));
+    }
+
+    37.5% {
+        background: linear-gradient(90deg, rgb(31, 11, 148), rgb(59, 57, 94));
+    }
+
+    50% {
+        background: linear-gradient(135deg, rgb(31, 11, 148), rgb(59, 57, 94));
+    }
+
+    62.5% {
+        background: linear-gradient(180deg, rgb(31, 11, 148), rgb(59, 57, 94));
+    }
+
+    75% {
+        background: linear-gradient(225deg, rgb(31, 11, 148), rgb(59, 57, 94));
+    }
+
+    87.5% {
+        background: linear-gradient(270deg, rgb(31, 11, 148), rgb(59, 57, 94));
+    }
+
+    100% {
+        background: linear-gradient(315deg, rgb(31, 11, 148), rgb(59, 57, 94));
+    }
+}
+
+@keyframes spinGradientReverse {
+    0% {
+        background: linear-gradient(-45deg, rgb(31, 11, 148), rgb(59, 57, 94));
+    }
+
+    12.5% {
+        background: linear-gradient(-90deg, rgb(31, 11, 148), rgb(59, 57, 94));
+    }
+
+    25% {
+        background: linear-gradient(-135deg, rgb(31, 11, 148), rgb(59, 57, 94));
+    }
+
+    37.5% {
+        background: linear-gradient(-180deg, rgb(31, 11, 148), rgb(59, 57, 94));
+    }
+
+    50% {
+        background: linear-gradient(-225deg, rgb(31, 11, 148), rgb(59, 57, 94));
+    }
+
+    62.5% {
+        background: linear-gradient(-270deg, rgb(31, 11, 148), rgb(59, 57, 94));
+    }
+
+    75% {
+        background: linear-gradient(-315deg, rgb(31, 11, 148), rgb(59, 57, 94));
+    }
+
+    87.5% {
+        background: linear-gradient(-360deg, rgb(31, 11, 148), rgb(59, 57, 94));
+    }
+
+    100% {
+        background: linear-gradient(-410deg, rgb(31, 11, 148), rgb(59, 57, 94));
+    }
+}
+
+#add-day {
+    background: linear-gradient(-45deg, rgb(31, 11, 148), rgb(59, 57, 94));
+    border-radius: 50%;
+    border: black solid 1.75px;
+    width: 50px;
+    height: 50px;
+    animation: spinGradientReverse 0.2s ease-in-out;
+    transition: transform 0.2s ease-in-out;
+}
+
+#add-day:hover {
+    cursor: pointer;
+    animation: spinGradient 0.2s ease-in-out;
+    transform: scale(1.1);
+}
+
+#add-day:active {
+    transition: transform 0.05s ease-in-out;
+    transform: scale(0.98);
+}
